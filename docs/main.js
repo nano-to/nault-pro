@@ -1233,7 +1233,7 @@ AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["�
     }
   },
   decls: 164,
-  vars: 70,
+  vars: 74,
   consts: [["uk-grid", "", 1, "app", 2, "overflow-y", "hidden", 3, "mousemove", "keypress"], [1, "uk-width-1-1", 2, "position", "relative", "overflow-y", "hidden"], ["uk-grid", "", 1, "mobile-top-bar", "uk-background-primary"], [1, "uk-width-1-2", "button-column"], [1, "nav-button", 3, "click"], ["uk-icon", "icon: menu;"], [1, "app-name"], [1, "uk-width-1-2", 2, "text-align", "right"], ["accountsDropdown", ""], [1, "header"], ["class", "account active", 4, "ngIf"], [3, "click"], [1, "name-column"], [1, "name"], [1, "address"], [1, "balance-column"], [4, "ngIf", "ngIfElse"], ["balanceLoading", ""], [4, "ngFor", "ngForOf"], ["uk-grid", "", 1, "app-grid"], [1, "uk-width-1-4", "nav-container"], [1, "nav-header"], ["uk-grid", ""], [1, "uk-width-expand"], [1, "nano-card", 3, "ngClass"], ["class", "custom-background", "alt", "Wallet card background", 3, "src", 4, "ngIf"], [1, "logo"], [1, "card-contents"], [1, "account-name-container"], [1, "name", 3, "routerLink", "queryParams"], ["selectButton", ""], [1, "circle"], [1, "account-balances"], ["balancesLoading", ""], [4, "ngIf"], ["class", "nav-status-row", 4, "ngIf"], ["role", "navigation", "aria-label", "Main", "uk-nav", "", 1, "uk-nav", "uk-nav-default", "uk-nav-parent-icon", "left-nav"], ["routerLink", "/accounts", "routerLinkActive", "active"], [1, "label"], ["routerLink", "/send", "routerLinkActive", "active"], ["routerLink", "/receive", "routerLinkActive", "active"], [1, "uk-width-3-4"], [1, "uk-width-1-4", "uk-text-center", "label-new"], ["class", "uk-badge uk-text-top uk-align-center", 4, "ngIf"], [1, "uk-parent"], ["href", "#"], [1, "uk-nav-sub"], ["routerLink", "/configure-app", "routerLinkActive", "active"], ["routerLink", "/cloud-auth/login", "routerLinkActive", "active"], ["routerLink", "/cloud-api-docs", "routerLinkActive", "active"], ["routerLink", "/representatives", "routerLinkActive", "active", 3, "queryParams"], ["href", "https://simpleswap.io/?ref=ecc1985b556a", "target", "_blank"], [2, "display", "inline-block", "filter", "invert(1)", "margin-left", "6px", "zoom", "0.8", "vertical-align", "text-bottom"], ["height", "16", "viewBox", "0 0 16 16", "width", "16", "xmlns", "http://www.w3.org/2000/svg"], ["d", "M15,10 L15,14 C15,15.1045695 14.1045695,16 13,16 L2,16 C0.8954305,16 0,15.1045695 0,14 L0,3 C0,1.8954305 0.8954305,1 2,1 L6,1 L6,3 L2,3 L2,14 L13,14 L13,10 L15,10 Z M13.9971001,3.41421356 L7.70420685,9.70710678 L6.28999329,8.29289322 L12.5828865,2 L8.99710007,2 L8.99710007,0 L15.9971001,0 L15.9971001,7 L13.9971001,7 L13.9971001,3.41421356 Z", "fill-rule", "evenodd"], ["routerLink", "/remote-signing", "routerLinkActive", "active"], ["routerLink", "/multisig", "routerLinkActive", "active"], ["routerLink", "/keygenerator", "routerLinkActive", "active"], ["routerLink", "/converter", "routerLinkActive", "active"], ["routerLink", "/qr-generator", "routerLinkActive", "active"], ["routerLink", "/configure-wallet", "routerLinkActive", "active"], ["uk-grid", "", 1, "footer", "footer-actions", "uk-margin-remove-top", "uk-flex-middle"], [1, "uk-width-1-3", "uk-text-center"], ["target", "https://nano.to", "target", "_blank", 1, "support-nault"], [1, "button"], [1, "footer-link", "donation-icon"], ["uk-icon", "icon: heart; ratio: 1.2;"], [1, "section-caption"], [1, "uk-width-1-3", "uk-text-center", "community-column"], [1, "icons-row"], ["href", "https://github.com/fwd/Nault-Pro", "uk-icon", "icon: github-alt; ratio: 1.2;", "uk-tooltip", "", "title", "View our GitHub", "target", "_blank", "rel", "noopener noreferrer", 1, "footer-link"], ["href", "https://discord.gg/2xYr2ZthZF", "uk-tooltip", "", "title", "Join Nault.Pro on Discord", "target", "_blank", "rel", "noopener noreferrer", 1, "footer-link", "discord-icon"], ["width", "28", "height", "28", "xmlns", "http://www.w3.org/2000/svg", "viewBox", "0 0 245 240"], ["d", "M104.4 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1.1-6.1-4.5-11.1-10.2-11.1zM140.9 103.9c-5.7 0-10.2 5-10.2 11.1s4.6 11.1 10.2 11.1c5.7 0 10.2-5 10.2-11.1s-4.5-11.1-10.2-11.1z", 1, "st0"], ["d", "M189.5 20h-134C44.2 20 35 29.2 35 40.6v135.2c0 11.4 9.2 20.6 20.5 20.6h113.4l-5.3-18.5 12.8 11.9 12.1 11.2 21.5 19V40.6c0-11.4-9.2-20.6-20.5-20.6zm-38.6 130.6s-3.6-4.3-6.6-8.1c13.1-3.7 18.1-11.9 18.1-11.9-4.1 2.7-8 4.6-11.5 5.9-5 2.1-9.8 3.5-14.5 4.3-9.6 1.8-18.4 1.3-25.9-.1-5.7-1.1-10.6-2.7-14.7-4.3-2.3-.9-4.8-2-7.3-3.4-.3-.2-.6-.3-.9-.5-.2-.1-.3-.2-.4-.3-1.8-1-2.8-1.7-2.8-1.7s4.8 8 17.5 11.8c-3 3.8-6.7 8.3-6.7 8.3-22.1-.7-30.5-15.2-30.5-15.2 0-32.2 14.4-58.3 14.4-58.3 14.4-10.8 28.1-10.5 28.1-10.5l1 1.2c-18 5.2-26.3 13.1-26.3 13.1s2.2-1.2 5.9-2.9c10.7-4.7 19.2-6 22.7-6.3.6-.1 1.1-.2 1.7-.2 6.1-.8 13-1 20.2-.2 9.5 1.1 19.7 3.9 30.1 9.6 0 0-7.9-7.5-24.9-12.7l1.4-1.6s13.7-.3 28.1 10.5c0 0 14.4 26.1 14.4 58.3 0 0-8.5 14.5-30.6 15.2z", 1, "st0"], [1, "uk-width-1-3", "uk-text-center", "dark-mode-column"], [1, "dark-mode-area"], [1, "dark-mode-switch"], ["width", "16", "height", "16", "version", "1.1", "viewBox", "0 0 160 160", "xmlns", "http://www.w3.org/2000/svg"], ["fill", "#EEE", "stroke", "#EEE", "stroke-linejoin", "round", "stroke-width", "2"], ["d", "m145.54 108.99c-5.5673 25.239-34.67 39.667-62.22 39.667-37.888 0-68.603-30.714-68.603-68.603-1e-6 -37.888 30.714-68.603 68.603-68.603 9.8615 0 19.237 2.0808 27.712 5.8272-105.27 26.034-34.024 146.53 34.508 91.711z", "stop-color", "#000000"], ["transform", "matrix(.69599 .69599 -.69599 .69599 66.459 -75.221)", "d", "m120.54 62.862c-2.3901-1e-6 -9.2713 6.4507-10.961 4.7607s4.7607-8.5712 4.7607-10.961c0-2.3901-6.4507-9.2713-4.7607-10.961s8.5712 4.7607 10.961 4.7607 9.2712-6.4507 10.961-4.7607c1.69 1.6901-4.7607 8.5712-4.7607 10.961 0 2.3901 6.4507 9.2713 4.7607 10.961-1.6901 1.6901-8.5712-4.7607-10.961-4.7607z", "stop-color", "#000000"], ["uk-grid", "", 1, "footer", "footer-attribution", "uk-margin-remove-top"], [1, "attribution", "uk-width-1-1", "uk-text-center"], ["href", "https://github.com/Nault/Nault", "target", "_blank", "rel", "noopener noreferrer"], [1, "uk-width-expand", "content-container", "uk-panel", 3, "click"], [1, "account", "active"], [1, "address", "nano-address-monospace"], [1, "balance", "primary"], [1, "balance", "converted"], [1, "balance", "loading"], ["uk-spinner", "ratio: 0.5;"], ["class", "account inactive", 3, "click", 4, "ngIf"], [1, "account", "inactive", 3, "click"], ["class", "incoming-label", 4, "ngIf"], [1, "incoming-label"], [1, "text-snippet"], [1, "text-full"], ["alt", "Wallet card background", 1, "custom-background", 3, "src"], [1, "balance-container", "primary"], [1, "amount-container"], [1, "amount-integer"], [1, "amount-fractional"], ["class", "amount-updating", 4, "ngIf"], ["class", "balance-container converted", 4, "ngIf"], [1, "amount-updating"], [1, "balance-container", "converted"], [1, "currency-name"], [1, "estimate-symbol"], ["class", "spinner-container", 4, "ngIf"], [1, "spinner-container"], ["uk-spinner", "ratio: 0.6;"], ["notProcessingPending", ""], [1, "nano-card", "incoming-card", "uk-animation-slide-left"], ["routerLink", "/receive", 1, "name"], [1, "nav-separator-top"], ["class", "nav-action-receive", 4, "ngIf"], [1, "nav-action-receive"], ["uk-icon", "icon: chevron-up; ratio: 1.2;", 1, "icon"], ["manuallyReceivingPending", ""], ["class", "nav-action-receive user-action-required uk-animation-slide-left", 4, "ngIf"], [1, "nav-action-receive", "user-action-required", "uk-animation-slide-left"], [1, "nav-action-receive", "uk-animation-slide-left"], [1, "nav-status-row"], [1, "status-icon"], ["uk-icon", "icon: warning; ratio: 1.2;", 1, "uk-text-danger"], ["class", "status-labels", 4, "ngIf"], [1, "status-labels"], [1, "label", "primary", "uk-text-danger", 2, "text-decoration", "none"], [1, "label", "secondary"], ["routerLink", "/configure-app"], [1, "label", "primary", "uk-text-danger"], [1, "uk-badge", "uk-text-top", "uk-align-center"], ["routerLink", "/manage-wallet", "routerLinkActive", "active"]],
   template: function AppComponent_Template(rf, ctx) {
     if (rf & 1) {
@@ -1528,12 +1528,13 @@ AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["�
       const _r9 = _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵreference"](47);
 
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵstyleProp"]("height", ctx.innerHeight + "px");
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassProp"]("dark-mode", !ctx.settings.settings.lightModeEnabled)("light-mode", ctx.settings.settings.lightModeEnabled);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](11);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](57, _c2, ctx.showAccountsDropdown ? "visible" : "hidden"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](61, _c2, ctx.showAccountsDropdown ? "visible" : "hidden"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](4);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.wallet.selectedAccount !== null);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](59, _c3, ctx.wallet.selectedAccount === null ? "active" : "inactive"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](63, _c3, ctx.wallet.selectedAccount === null ? "active" : "inactive"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.walletService.wallet.updatingBalance === false)("ngIfElse", _r3);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](3);
@@ -1543,15 +1544,15 @@ AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵstyleProp"]("height", ctx.innerHeightWithoutMobileBar + "px");
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction3"](61, _c4, ctx.wallet.selectedAccount === null, ctx.wallet.selectedAccount !== null, ctx.wallet.selectedAccount === null && !!ctx.settings.settings.navCardBackground && ctx.settings.settings.navCardBackground.startsWith("data:image/")));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngClass", _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction3"](65, _c4, ctx.wallet.selectedAccount === null, ctx.wallet.selectedAccount !== null, ctx.wallet.selectedAccount === null && !!ctx.settings.settings.navCardBackground && ctx.settings.settings.navCardBackground.startsWith("data:image/")));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.wallet.selectedAccount === null && ctx.settings.settings.navCardBackground && ctx.settings.settings.navCardBackground.startsWith("data:image/"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](4);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("routerLink", ctx.wallet.selectedAccount !== null ? "/account/" + ctx.wallet.selectedAccount.id : "/accounts")("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction0"](65, _c5));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("routerLink", ctx.wallet.selectedAccount !== null ? "/account/" + ctx.wallet.selectedAccount.id : "/accounts")("queryParams", _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction0"](69, _c5));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](ctx.wallet.selectedAccount !== null ? ctx.wallet.selectedAccount.addressBookName ? ctx.wallet.selectedAccount.addressBookName : _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](38, 43, "general.account") + " #" + ctx.wallet.selectedAccount.index : "Balance");
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](ctx.wallet.selectedAccount !== null ? ctx.wallet.selectedAccount.addressBookName ? ctx.wallet.selectedAccount.addressBookName : _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](38, 47, "general.account") + " #" + ctx.wallet.selectedAccount.index : "Balance");
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](2);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](66, _c6, ctx.showAccountsDropdown ? "open" : "closed"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](70, _c6, ctx.showAccountsDropdown ? "open" : "closed"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](6);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.node.status && ctx.wallet.balanceInitialized === true || !ctx.isConfigured())("ngIfElse", _r9);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](3);
@@ -1561,25 +1562,25 @@ AppComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_22__["�
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.isConfigured());
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](57, 45, "general.accounts"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](57, 49, "general.accounts"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](5);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](62, 47, "general.send"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](62, 51, "general.send"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](7);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](69, 49, "general.receive"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](69, 53, "general.receive"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](3);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.walletService.hasPendingTransactions());
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](1);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.cloudWalletService.hasSession());
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](3);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](76, 51, "general.settings"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](76, 55, "general.settings"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](6);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](82, 53, "general.app-settings"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](82, 57, "general.app-settings"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](2);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵproperty"]("ngIf", ctx.isConfigured());
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](12);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](96, 55, "general.representatives"));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵtextInterpolate"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpipeBind1"](96, 59, "general.representatives"));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](52);
-      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](68, _c7, !ctx.settings.settings.lightModeEnabled));
+      _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassMap"](_angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵpureFunction1"](72, _c7, !ctx.settings.settings.lightModeEnabled));
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵadvance"](14);
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵstyleProp"]("height", ctx.innerHeightWithoutMobileBar + "px");
       _angular_core__WEBPACK_IMPORTED_MODULE_22__["ɵɵclassProp"]("nav-expanded", ctx.navExpanded)("nav-animating", ctx.navAnimating);
@@ -6598,7 +6599,7 @@ AccountsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7_
   selectors: [["app-accounts"]],
   decls: 36,
   vars: 31,
-  consts: [["uk-grid", "", 1, "uk-animation-slide-left-small"], [1, "uk-width-1-1"], ["uk-grid", "", 1, "uk-margin-bottom"], [1, "uk-width-expand@s", "uk-width-1-1"], [1, "uk-heading-divider", "uk-text-truncate"], [1, "uk-text-truncate", 2, "font-size", "12px", "margin-left", "25px", "opacity", "0.4", "color", "#FFF", 3, "click"], [1, ""], ["uk-grid", "", 1, "uk-grid-small", "uk-child-width-expand"], ["type", "number", "class", "uk-input uk-form-width-small uk-width-1-1@m", "placeholder", "Account #", 3, "ngModel", "ngModelChange", 4, "ngIf"], [1, "uk-width-auto@m"], [1, "uk-button", "uk-button-secondary", "uk-width-1-1@m", 3, "click"], [1, "uk-card", "uk-overflow-hidden"], [1, "accounts-list", "uk-table", "uk-table-striped", "uk-table-small"], ["scope", "col", 1, "account-column", "uk-width-3-5@m", "uk-width-1-2"], ["scope", "col", 1, "account-amounts-column", "uk-width-1-5@m", "uk-width-1-4", "uk-text-right"], ["scope", "col"], ["class", "uk-visible-toggle", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["class", "uk-table uk-table-striped uk-table-small", 4, "ngIf"], ["type", "number", "placeholder", "Account #", 1, "uk-input", "uk-form-width-small", "uk-width-1-1@m", 3, "ngModel", "ngModelChange"], [1, "uk-visible-toggle"], ["accountAmounts", ""], ["accountActions", ""], [1, "account-column", "uk-visible-toggle", "uk-text-truncate"], ["uk-grid", ""], [3, "routerLink", "queryParams", "click"], [1, "uk-flex"], ["scale", "12", "class", "nano-identicon", 3, "accountID", "settingIdenticonsStyle", 4, "ngIf"], [1, "uk-width-expand"], ["class", "account-index", 4, "ngIf"], [1, "account-label"], [1, "nano-address-clickable", "nano-address-monospace", "uk-text-truncate"], ["middle", "auto", 3, "accountID"], [1, "nano-address-actions", "uk-width-auto", "copy-container"], [1, "uk-iconnav", "copy-icons"], ["ngxClipboard", "", "uk-icon", "icon: copy", "uk-tooltip", "", 3, "cbContent", "title", "cbOnSuccess"], [1, "compact-account-amounts"], [3, "ngTemplateOutlet"], [1, "compact-account-actions"], [1, "account-amounts-column", "uk-text-right"], [1, "uk-float-right"], [4, "ngIf", "ngIfElse"], ["balanceLoading", ""], [1, "account-amounts-primary", "uk-width-1-1"], ["class", "incoming-label", 4, "ngIf"], [1, "amounts", 3, "title"], [1, "amount-integer"], [1, "amount-fractional"], [1, "currency-name"], [1, "account-amounts-converted", "uk-width-1-1", "text-half-muted"], [1, "incoming-label"], [1, "text-snippet"], [1, "text-full"], ["uk-spinner", "ratio: 0.5;"], ["uk-tooltip", "", 1, "icon-delete-account", "uk-text-danger", 3, "title", "click"], ["uk-icon", "icon: close;"], ["type", "button", 1, "button-delete-account", "uk-button", "uk-button-secondary", "uk-text-danger", "uk-text-center", "uk-width-auto", "nlt-icon-button", 3, "click"], ["uk-icon", "icon: close;", 1, "nlt-icon", 2, "vertical-align", "1px"], ["scale", "12", 1, "nano-identicon", 3, "accountID", "settingIdenticonsStyle"], [1, "account-index"], ["uk-icon", "icon: commenting", "uk-tooltip", "", 3, "title", "click"], ["colspan", "4", 2, "text-align", "center"], [3, "click"], [1, "uk-table", "uk-table-striped", "uk-table-small"], [1, "uk-alert", "uk-alert-primary", "missing-accounts-hint"], ["uk-icon", "icon: info"], [1, "hint-action", 3, "click"]],
+  consts: [["uk-grid", "", 1, "uk-animation-slide-left-small"], [1, "uk-width-1-1"], ["uk-grid", "", 1, "uk-margin-bottom"], [1, "uk-width-expand@s", "uk-width-1-1"], [1, "uk-heading-divider", "uk-text-truncate"], [1, "uk-text-truncate", "advanced-mode-toggle", 3, "click"], [1, ""], ["uk-grid", "", 1, "uk-grid-small", "uk-child-width-expand"], ["type", "number", "class", "uk-input uk-form-width-small uk-width-1-1@m", "placeholder", "Account #", 3, "ngModel", "ngModelChange", 4, "ngIf"], [1, "uk-width-auto@m"], [1, "uk-button", "uk-button-secondary", "uk-width-1-1@m", 3, "click"], [1, "uk-card", "uk-overflow-hidden"], [1, "accounts-list", "uk-table", "uk-table-striped", "uk-table-small"], ["scope", "col", 1, "account-column", "uk-width-3-5@m", "uk-width-1-2"], ["scope", "col", 1, "account-amounts-column", "uk-width-1-5@m", "uk-width-1-4", "uk-text-right"], ["scope", "col"], ["class", "uk-visible-toggle", 4, "ngFor", "ngForOf"], [4, "ngIf"], ["class", "uk-table uk-table-striped uk-table-small", 4, "ngIf"], ["type", "number", "placeholder", "Account #", 1, "uk-input", "uk-form-width-small", "uk-width-1-1@m", 3, "ngModel", "ngModelChange"], [1, "uk-visible-toggle"], ["accountAmounts", ""], ["accountActions", ""], [1, "account-column", "uk-visible-toggle", "uk-text-truncate"], ["uk-grid", ""], [3, "routerLink", "queryParams", "click"], [1, "uk-flex"], ["scale", "12", "class", "nano-identicon", 3, "accountID", "settingIdenticonsStyle", 4, "ngIf"], [1, "uk-width-expand"], ["class", "account-index", 4, "ngIf"], [1, "account-label"], [1, "nano-address-clickable", "nano-address-monospace", "uk-text-truncate"], ["middle", "auto", 3, "accountID"], [1, "nano-address-actions", "uk-width-auto", "copy-container"], [1, "uk-iconnav", "copy-icons"], ["ngxClipboard", "", "uk-icon", "icon: copy", "uk-tooltip", "", 3, "cbContent", "title", "cbOnSuccess"], [1, "compact-account-amounts"], [3, "ngTemplateOutlet"], [1, "compact-account-actions"], [1, "account-amounts-column", "uk-text-right"], [1, "uk-float-right"], [4, "ngIf", "ngIfElse"], ["balanceLoading", ""], [1, "account-amounts-primary", "uk-width-1-1"], ["class", "incoming-label", 4, "ngIf"], [1, "amounts", 3, "title"], [1, "amount-integer"], [1, "amount-fractional"], [1, "currency-name"], [1, "account-amounts-converted", "uk-width-1-1", "text-half-muted"], [1, "incoming-label"], [1, "text-snippet"], [1, "text-full"], ["uk-spinner", "ratio: 0.5;"], ["uk-tooltip", "", 1, "icon-delete-account", "uk-text-danger", 3, "title", "click"], ["uk-icon", "icon: close;"], ["type", "button", 1, "button-delete-account", "uk-button", "uk-button-secondary", "uk-text-danger", "uk-text-center", "uk-width-auto", "nlt-icon-button", 3, "click"], ["uk-icon", "icon: close;", 1, "nlt-icon", 2, "vertical-align", "1px"], ["scale", "12", 1, "nano-identicon", 3, "accountID", "settingIdenticonsStyle"], [1, "account-index"], ["uk-icon", "icon: commenting", "uk-tooltip", "", 3, "title", "click"], ["colspan", "4", 2, "text-align", "center"], [3, "click"], [1, "uk-table", "uk-table-striped", "uk-table-small"], [1, "uk-alert", "uk-alert-primary", "missing-accounts-hint"], ["uk-icon", "icon: info"], [1, "hint-action", 3, "click"]],
   template: function AccountsComponent_Template(rf, ctx) {
     if (rf & 1) {
       _angular_core__WEBPACK_IMPORTED_MODULE_7__["ɵɵelementStart"](0, "div", 0);
@@ -6690,7 +6691,7 @@ AccountsComponent.ɵcmp = /*@__PURE__*/_angular_core__WEBPACK_IMPORTED_MODULE_7_
   },
   directives: [_angular_common__WEBPACK_IMPORTED_MODULE_13__.NgIf, _angular_common__WEBPACK_IMPORTED_MODULE_13__.NgForOf, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NumberValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.DefaultValueAccessor, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgControlStatus, _angular_forms__WEBPACK_IMPORTED_MODULE_14__.NgModel, _angular_router__WEBPACK_IMPORTED_MODULE_11__.RouterLinkWithHref, _helpers_nano_account_id_nano_account_id_component__WEBPACK_IMPORTED_MODULE_2__.NanoAccountIdComponent, ngx_clipboard__WEBPACK_IMPORTED_MODULE_15__.ClipboardDirective, _angular_common__WEBPACK_IMPORTED_MODULE_13__.NgTemplateOutlet, _helpers_nano_identicon_nano_identicon_component__WEBPACK_IMPORTED_MODULE_3__.NanoIdenticonComponent],
   pipes: [_ngneat_transloco__WEBPACK_IMPORTED_MODULE_12__.TranslocoPipe, _angular_common__WEBPACK_IMPORTED_MODULE_13__.UpperCasePipe, _pipes_amount_split_pipe__WEBPACK_IMPORTED_MODULE_4__.AmountSplitPipe, _pipes_rai_pipe__WEBPACK_IMPORTED_MODULE_5__.RaiPipe, _pipes_fiat_pipe__WEBPACK_IMPORTED_MODULE_6__.FiatPipe],
-  styles: [".table-header-delete-account[_ngcontent-%COMP%] {\n\twidth: 1%;\n\tmin-width: 50px;\n}\n\nth.hidden-column[_ngcontent-%COMP%], td.hidden-column[_ngcontent-%COMP%] {\n\tdisplay: none;\n}\n\n.hidden-section[_ngcontent-%COMP%] {\n\tdisplay: none;\n}\n\n.account-container.narrow[_ngcontent-%COMP%] {\n\tmax-width: calc(100% - 35px);\n}\n\n.account-container.wide[_ngcontent-%COMP%] {\n\tmax-width: calc(100% - 100px);\n}\n\n.copy-container[_ngcontent-%COMP%] {\n\tpadding-left: 10px;\n\tpadding-bottom: 3px;\n\tdisplay: grid;\n}\n\n.copy-icons[_ngcontent-%COMP%] {\n\talign-self: end;\n}\n\n.account-amounts-column[_ngcontent-%COMP%] {\n\twhite-space: nowrap;\n\tvertical-align: middle;\n}\n\n.account-container[_ngcontent-%COMP%]:hover   .nano-address-clickable[_ngcontent-%COMP%] {\n\tborder-color: transparent;\n}\n\n.account-container[_ngcontent-%COMP%]   .nano-address-clickable[_ngcontent-%COMP%] {\n\tvertical-align: bottom;\n}\n\n.account-container[_ngcontent-%COMP%]   .account-label[_ngcontent-%COMP%] {\n\tmargin-bottom: 3px;\n}\n\n.icon-delete-account[_ngcontent-%COMP%] {\n\tvertical-align: -2px;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY291bnRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxTQUFTO0NBQ1QsZUFBZTtBQUNoQjs7QUFFQTtDQUNDLGFBQWE7QUFDZDs7QUFFQTtDQUNDLGFBQWE7QUFDZDs7QUFFQTtDQUNDLDRCQUE0QjtBQUM3Qjs7QUFFQTtDQUNDLDZCQUE2QjtBQUM5Qjs7QUFFQTtDQUNDLGtCQUFrQjtDQUNsQixtQkFBbUI7Q0FDbkIsYUFBYTtBQUNkOztBQUVBO0NBQ0MsZUFBZTtBQUNoQjs7QUFFQTtDQUNDLG1CQUFtQjtDQUNuQixzQkFBc0I7QUFDdkI7O0FBRUE7Q0FDQyx5QkFBeUI7QUFDMUI7O0FBRUE7Q0FDQyxzQkFBc0I7QUFDdkI7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxvQkFBb0I7QUFDckIiLCJmaWxlIjoiYWNjb3VudHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWJsZS1oZWFkZXItZGVsZXRlLWFjY291bnQge1xuXHR3aWR0aDogMSU7XG5cdG1pbi13aWR0aDogNTBweDtcbn1cblxudGguaGlkZGVuLWNvbHVtbiwgdGQuaGlkZGVuLWNvbHVtbiB7XG5cdGRpc3BsYXk6IG5vbmU7XG59XG5cbi5oaWRkZW4tc2VjdGlvbiB7XG5cdGRpc3BsYXk6IG5vbmU7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lci5uYXJyb3cge1xuXHRtYXgtd2lkdGg6IGNhbGMoMTAwJSAtIDM1cHgpO1xufVxuXG4uYWNjb3VudC1jb250YWluZXIud2lkZSB7XG5cdG1heC13aWR0aDogY2FsYygxMDAlIC0gMTAwcHgpO1xufVxuXG4uY29weS1jb250YWluZXIge1xuXHRwYWRkaW5nLWxlZnQ6IDEwcHg7XG5cdHBhZGRpbmctYm90dG9tOiAzcHg7XG5cdGRpc3BsYXk6IGdyaWQ7XG59XG5cbi5jb3B5LWljb25zIHtcblx0YWxpZ24tc2VsZjogZW5kO1xufVxuXG4uYWNjb3VudC1hbW91bnRzLWNvbHVtbiB7XG5cdHdoaXRlLXNwYWNlOiBub3dyYXA7XG5cdHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lcjpob3ZlciAubmFuby1hZGRyZXNzLWNsaWNrYWJsZSB7XG5cdGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lciAubmFuby1hZGRyZXNzLWNsaWNrYWJsZSB7XG5cdHZlcnRpY2FsLWFsaWduOiBib3R0b207XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lciAuYWNjb3VudC1sYWJlbCB7XG5cdG1hcmdpbi1ib3R0b206IDNweDtcbn1cblxuLmljb24tZGVsZXRlLWFjY291bnQge1xuXHR2ZXJ0aWNhbC1hbGlnbjogLTJweDtcbn1cbiJdfQ== */"]
+  styles: [".table-header-delete-account[_ngcontent-%COMP%] {\n\twidth: 1%;\n\tmin-width: 50px;\n}\n\nth.hidden-column[_ngcontent-%COMP%], td.hidden-column[_ngcontent-%COMP%] {\n\tdisplay: none;\n}\n\n.hidden-section[_ngcontent-%COMP%] {\n\tdisplay: none;\n}\n\n.account-container.narrow[_ngcontent-%COMP%] {\n\tmax-width: calc(100% - 35px);\n}\n\n.account-container.wide[_ngcontent-%COMP%] {\n\tmax-width: calc(100% - 100px);\n}\n\n.copy-container[_ngcontent-%COMP%] {\n\tpadding-left: 10px;\n\tpadding-bottom: 3px;\n\tdisplay: grid;\n}\n\n.copy-icons[_ngcontent-%COMP%] {\n\talign-self: end;\n}\n\n.account-amounts-column[_ngcontent-%COMP%] {\n\twhite-space: nowrap;\n\tvertical-align: middle;\n}\n\n.account-container[_ngcontent-%COMP%]:hover   .nano-address-clickable[_ngcontent-%COMP%] {\n\tborder-color: transparent;\n}\n\n.account-container[_ngcontent-%COMP%]   .nano-address-clickable[_ngcontent-%COMP%] {\n\tvertical-align: bottom;\n}\n\n.account-container[_ngcontent-%COMP%]   .account-label[_ngcontent-%COMP%] {\n\tmargin-bottom: 3px;\n}\n\n.icon-delete-account[_ngcontent-%COMP%] {\n\tvertical-align: -2px;\n}\n\n.advanced-mode-toggle[_ngcontent-%COMP%] {\n\tfont-size: 12px;\n\tmargin-left: 25px;\n\topacity: 0.55;\n\tcolor: #5a6a80;\n}\n\n.advanced-mode-toggle[_ngcontent-%COMP%]:hover, .advanced-mode-toggle[_ngcontent-%COMP%]:focus {\n\ttext-decoration: none;\n\topacity: 0.9;\n\tcolor: #2f4b73;\n}\n\n.dark-mode[_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%], .dark-mode   [_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%] {\n\tcolor: #d5d5e8;\n\topacity: 0.65;\n}\n\n.dark-mode[_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%]:hover, .dark-mode   [_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%]:hover, .dark-mode[_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%]:focus, .dark-mode   [_nghost-%COMP%]   .advanced-mode-toggle[_ngcontent-%COMP%]:focus {\n\tcolor: #ffffff;\n\topacity: 0.95;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImFjY291bnRzLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7Q0FDQyxTQUFTO0NBQ1QsZUFBZTtBQUNoQjs7QUFFQTtDQUNDLGFBQWE7QUFDZDs7QUFFQTtDQUNDLGFBQWE7QUFDZDs7QUFFQTtDQUNDLDRCQUE0QjtBQUM3Qjs7QUFFQTtDQUNDLDZCQUE2QjtBQUM5Qjs7QUFFQTtDQUNDLGtCQUFrQjtDQUNsQixtQkFBbUI7Q0FDbkIsYUFBYTtBQUNkOztBQUVBO0NBQ0MsZUFBZTtBQUNoQjs7QUFFQTtDQUNDLG1CQUFtQjtDQUNuQixzQkFBc0I7QUFDdkI7O0FBRUE7Q0FDQyx5QkFBeUI7QUFDMUI7O0FBRUE7Q0FDQyxzQkFBc0I7QUFDdkI7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxvQkFBb0I7QUFDckI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2YsaUJBQWlCO0NBQ2pCLGFBQWE7Q0FDYixjQUFjO0FBQ2Y7O0FBRUE7O0NBRUMscUJBQXFCO0NBQ3JCLFlBQVk7Q0FDWixjQUFjO0FBQ2Y7O0FBRUE7Q0FDQyxjQUFjO0NBQ2QsYUFBYTtBQUNkOztBQUVBOztDQUVDLGNBQWM7Q0FDZCxhQUFhO0FBQ2QiLCJmaWxlIjoiYWNjb3VudHMuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi50YWJsZS1oZWFkZXItZGVsZXRlLWFjY291bnQge1xuXHR3aWR0aDogMSU7XG5cdG1pbi13aWR0aDogNTBweDtcbn1cblxudGguaGlkZGVuLWNvbHVtbiwgdGQuaGlkZGVuLWNvbHVtbiB7XG5cdGRpc3BsYXk6IG5vbmU7XG59XG5cbi5oaWRkZW4tc2VjdGlvbiB7XG5cdGRpc3BsYXk6IG5vbmU7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lci5uYXJyb3cge1xuXHRtYXgtd2lkdGg6IGNhbGMoMTAwJSAtIDM1cHgpO1xufVxuXG4uYWNjb3VudC1jb250YWluZXIud2lkZSB7XG5cdG1heC13aWR0aDogY2FsYygxMDAlIC0gMTAwcHgpO1xufVxuXG4uY29weS1jb250YWluZXIge1xuXHRwYWRkaW5nLWxlZnQ6IDEwcHg7XG5cdHBhZGRpbmctYm90dG9tOiAzcHg7XG5cdGRpc3BsYXk6IGdyaWQ7XG59XG5cbi5jb3B5LWljb25zIHtcblx0YWxpZ24tc2VsZjogZW5kO1xufVxuXG4uYWNjb3VudC1hbW91bnRzLWNvbHVtbiB7XG5cdHdoaXRlLXNwYWNlOiBub3dyYXA7XG5cdHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lcjpob3ZlciAubmFuby1hZGRyZXNzLWNsaWNrYWJsZSB7XG5cdGJvcmRlci1jb2xvcjogdHJhbnNwYXJlbnQ7XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lciAubmFuby1hZGRyZXNzLWNsaWNrYWJsZSB7XG5cdHZlcnRpY2FsLWFsaWduOiBib3R0b207XG59XG5cbi5hY2NvdW50LWNvbnRhaW5lciAuYWNjb3VudC1sYWJlbCB7XG5cdG1hcmdpbi1ib3R0b206IDNweDtcbn1cblxuLmljb24tZGVsZXRlLWFjY291bnQge1xuXHR2ZXJ0aWNhbC1hbGlnbjogLTJweDtcbn1cblxuLmFkdmFuY2VkLW1vZGUtdG9nZ2xlIHtcblx0Zm9udC1zaXplOiAxMnB4O1xuXHRtYXJnaW4tbGVmdDogMjVweDtcblx0b3BhY2l0eTogMC41NTtcblx0Y29sb3I6ICM1YTZhODA7XG59XG5cbi5hZHZhbmNlZC1tb2RlLXRvZ2dsZTpob3Zlcixcbi5hZHZhbmNlZC1tb2RlLXRvZ2dsZTpmb2N1cyB7XG5cdHRleHQtZGVjb3JhdGlvbjogbm9uZTtcblx0b3BhY2l0eTogMC45O1xuXHRjb2xvcjogIzJmNGI3Mztcbn1cblxuOmhvc3QtY29udGV4dCguZGFyay1tb2RlKSAuYWR2YW5jZWQtbW9kZS10b2dnbGUge1xuXHRjb2xvcjogI2Q1ZDVlODtcblx0b3BhY2l0eTogMC42NTtcbn1cblxuOmhvc3QtY29udGV4dCguZGFyay1tb2RlKSAuYWR2YW5jZWQtbW9kZS10b2dnbGU6aG92ZXIsXG46aG9zdC1jb250ZXh0KC5kYXJrLW1vZGUpIC5hZHZhbmNlZC1tb2RlLXRvZ2dsZTpmb2N1cyB7XG5cdGNvbG9yOiAjZmZmZmZmO1xuXHRvcGFjaXR5OiAwLjk1O1xufVxuIl19 */"]
 });
 
 /***/ }),
@@ -9237,6 +9238,7 @@ class CloudApiDocsComponent {
         this.createKeyExample = '';
         this.profileExample = '';
         this.walletExample = '';
+        this.createAccountExample = '';
         this.receiveExample = '';
         this.sendExample = '';
         this.changeRepExample = '';
@@ -9254,6 +9256,10 @@ class CloudApiDocsComponent {
   -H "x-api-key: npk_..."`;
         this.walletExample = `curl ${this.apiBase}/api/programmatic/wallet \\
   -H "x-api-key: npk_..."`;
+        this.createAccountExample = `curl -X POST ${this.apiBase}/api/programmatic/accounts/create \\
+  -H "x-api-key: npk_..." \\
+  -H "Content-Type: application/json" \\
+  -d '{"walletPassword":"your-wallet-password"}'`;
         this.receiveExample = `curl -X POST ${this.apiBase}/api/programmatic/receive \\
   -H "x-api-key: npk_..." \\
   -H "Content-Type: application/json" \\
@@ -9269,7 +9275,7 @@ class CloudApiDocsComponent {
     }
 }
 CloudApiDocsComponent.ɵfac = function CloudApiDocsComponent_Factory(t) { return new (t || CloudApiDocsComponent)(); };
-CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CloudApiDocsComponent, selectors: [["app-cloud-api-docs"]], decls: 60, vars: 8, consts: [[1, "cloud-api-docs", "uk-animation-slide-left-small"], [1, "uk-heading-divider"], [1, "uk-alert", "uk-alert-primary"], [1, "doc-card"], [1, "language-bash", 3, "textContent"], [1, "language-json", 3, "textContent"], [1, "uk-alert", "uk-alert-warning"]], template: function CloudApiDocsComponent_Template(rf, ctx) { if (rf & 1) {
+CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵdefineComponent"]({ type: CloudApiDocsComponent, selectors: [["app-cloud-api-docs"]], decls: 70, vars: 9, consts: [[1, "cloud-api-docs", "uk-animation-slide-left-small"], [1, "uk-heading-divider"], [1, "uk-alert", "uk-alert-primary"], [1, "doc-card"], [1, "language-bash", 3, "textContent"], [1, "language-json", 3, "textContent"], [1, "uk-alert", "uk-alert-warning"]], template: function CloudApiDocsComponent_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](1, "h2", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](2, "Cloud Wallet API Docs");
@@ -9312,25 +9318,25 @@ CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](26, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](27, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28, "4. Receive Pending Transactions");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](28, "4. Create / Derive Account");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](29, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, "Creates open/receive blocks for pending incoming transactions.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](30, "Creates the next account index by default. You can also pass ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](32, "accountIndex");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](31, "pre");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](32, "code", 4);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](33, " explicitly.");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "pre");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](35, "code", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](33, "div", 3);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](34, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](35, "5. Send Transaction");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](37, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](38, "5. Receive Pending Transactions");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](36, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](37, "Supports Nano address or verified username format like ");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](38, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](39, "@development");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](39, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](40, "Creates open/receive blocks for pending incoming transactions.");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](41, "pre");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](42, "code", 4);
@@ -9338,12 +9344,12 @@ CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](43, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](44, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](45, "6. Change Representative");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](45, "6. Send Transaction");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](46, "p");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47, "Updates representative for an opened account. Accepts address or ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](47, "Supports Nano address or verified username format like ");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](48, "code");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49, "@username");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](49, "@development");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](50, ".");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
@@ -9353,14 +9359,29 @@ CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](53, "div", 3);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](54, "h3");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, "Response Example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](55, "7. Change Representative");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "pre");
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](57, "code", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](56, "p");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](57, "Updates representative for an opened account. Accepts address or ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "code");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, "@username");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](60, ".");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](61, "pre");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](62, "code", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](58, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](59, " Keep API keys secret. Revoke compromised keys immediately from Cloud Wallet settings. ");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](63, "div", 3);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](64, "h3");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](65, "Response Example");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](66, "pre");
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelement"](67, "code", 5);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementStart"](68, "div", 6);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵtext"](69, " Keep API keys secret. Revoke compromised keys immediately from Cloud Wallet settings. ");
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵelementEnd"]();
     } if (rf & 2) {
@@ -9372,6 +9393,8 @@ CloudApiDocsComponent.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODU
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("textContent", ctx.profileExample);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("textContent", ctx.walletExample);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](10);
+        _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("textContent", ctx.createAccountExample);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](7);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵproperty"]("textContent", ctx.receiveExample);
         _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵadvance"](10);
