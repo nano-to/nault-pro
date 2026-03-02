@@ -1,4 +1,13 @@
-<div uk-grid class="app" (mousemove)="updateIdleTime()" (keypress)="updateIdleTime()" [style.height]="( innerHeight + 'px' )" style="overflow-y: hidden;">
+<div
+  uk-grid
+  class="app"
+  [class.dark-mode]="!settings.settings.lightModeEnabled"
+  [class.light-mode]="settings.settings.lightModeEnabled"
+  (mousemove)="updateIdleTime()"
+  (keypress)="updateIdleTime()"
+  [style.height]="( innerHeight + 'px' )"
+  style="overflow-y: hidden;"
+>
   <div class="uk-width-1-1" style="position: relative; overflow-y: hidden;">
 
     <!-- Mobile top bar -->
@@ -94,7 +103,20 @@
           <div uk-grid>
             <div class="uk-width-expand">
 
-              <div [class]="[ 'nano-card', (wallet.selectedAccount === null) ? 'is-wallet' : 'is-card' ]">
+              <div
+                class="nano-card"
+                [ngClass]="{
+                  'is-wallet': wallet.selectedAccount === null,
+                  'is-card': wallet.selectedAccount !== null,
+                  'has-custom-bg': wallet.selectedAccount === null && !!settings.settings.navCardBackground && settings.settings.navCardBackground.startsWith('data:image/')
+                }"
+              >
+                <img
+                  class="custom-background"
+                  *ngIf="wallet.selectedAccount === null && settings.settings.navCardBackground && settings.settings.navCardBackground.startsWith('data:image/')"
+                  [src]="settings.settings.navCardBackground"
+                  alt="Wallet card background"
+                >
                 <div class="logo"></div>
                 <div class="card-contents">
                   <div class="account-name-container">
@@ -232,8 +254,8 @@
               </div>
             </a>
           </li>
-          <li>
-            <a routerLink="/search" routerLinkActive="active"><div class="label">Search</div></a>
+          <li *ngIf="cloudWalletService.hasSession()">
+            <a routerLink="/cloud-auth/login" routerLinkActive="active"><div class="label">Cloud Wallet</div></a>
           </li>
         <!--   <li>
             <a routerLink="/donate" routerLinkActive="active"><div class="label">Donate</div></a>
@@ -246,6 +268,8 @@
             <ul class="uk-nav-sub">
               <li><a routerLink="/configure-app" routerLinkActive="active"><div class="label">{{ 'general.app-settings' | transloco }}</div></a></li>
               <li *ngIf="isConfigured()"><a routerLink="/manage-wallet" routerLinkActive="active"><div class="label">{{ 'general.wallet-settings' | transloco }}</div></a></li>
+              <li><a routerLink="/cloud-auth/login" routerLinkActive="active"><div class="label">Cloud Wallet</div></a></li>
+              <li><a routerLink="/cloud-api-docs" routerLinkActive="active"><div class="label">Cloud API Docs</div></a></li>
               <li><a routerLink="/representatives" [queryParams]="" routerLinkActive="active"><div class="label">{{ 'general.representatives' | transloco }}</div></a></li>
              
               <!-- <li class="uk-parent"> -->
@@ -271,13 +295,6 @@
         </ul>
 
         <app-install-widget></app-install-widget>
-
-        <div class="nav-search">
-          <form class="uk-search uk-search-default uk-width-1-1">
-            <a href="javascript:void(0)" (click)="performSearch()" class="uk-search-icon-flip" uk-search-icon></a>
-            <input class="uk-search-input uk-width-1-1" id="search-input" type="search" placeholder="Search for an account or block hash" [(ngModel)]="searchData" name="searchData" (keyup.enter)="performSearch()">
-          </form>
-        </div>
 
         <div class="footer footer-actions uk-margin-remove-top uk-flex-middle" uk-grid>
           <div class="uk-width-1-3 uk-text-center">

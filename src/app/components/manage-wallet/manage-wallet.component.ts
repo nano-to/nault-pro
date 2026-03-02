@@ -7,6 +7,8 @@ import {AppSettingsService} from '../../services/app-settings.service';
 import * as QRCode from 'qrcode';
 import * as bip from 'bip39';
 import {formatDate} from '@angular/common';
+import { CloudWalletService } from '../../services/cloud-wallet.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manage-wallet',
@@ -35,6 +37,7 @@ export class ManageWalletComponent implements OnInit {
   csvOffset = '';
   beyondCsvLimit = false;
   exportingCsv = false;
+  cloudSyncing = false;
   orderOptions = [
     { name: 'Newest Transactions First', value: false },
     { name: 'Oldest Transactions First', value: true },
@@ -47,7 +50,9 @@ export class ManageWalletComponent implements OnInit {
     public notifications: NotificationService,
     private api: ApiService,
     private util: UtilService,
-    public settings: AppSettingsService) { }
+    public settings: AppSettingsService,
+    public cloudWalletService: CloudWalletService,
+    private router: Router) { }
 
   async ngOnInit() {
     this.wallet = this.walletService.wallet;
@@ -273,5 +278,34 @@ export class ManageWalletComponent implements OnInit {
     const fileName = `${this.csvAccount}_offset=${this.csvOffset === '' ? 0 : this.csvOffset}${this.selectedOrder === true ? '_oldestFirst' : '_newestFirst'}.csv`;
     this.triggerFileDownload(fileName, csvData, 'csv');
     this.notifications.sendSuccess(`Transaction history downloaded!`);
+  }
+
+  openCloudAuth() {
+    this.router.navigate(['cloud-auth/login']);
+  }
+
+  async syncWalletToCloud() {
+    if (!this.cloudWalletService.hasSession()) {
+      this.notifications.sendInfo('Sign in to Cloud Wallet first.');
+      this.openCloudAuth();
+      return;
+    }
+
+    if (this.walletService.isLocked()) {
+      const wasUnlocked = await this.walletService.requestWalletUnlock();
+      if (wasUnlocked === false) {
+        return;
+      }
+    }
+
+    this.cloudSyncing = true;
+    try {
+      await this.cloudWalletService.syncCurrentWalletToCloud();
+      this.notifications.sendSuccess('Encrypted wallet backup synced to cloud successfully');
+    } catch {
+      this.notifications.sendError('Cloud wallet sync failed');
+    } finally {
+      this.cloudSyncing = false;
+    }
   }
 }

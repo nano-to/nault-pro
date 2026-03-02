@@ -7,6 +7,7 @@ import { QrModalService } from '../../services/qr-modal.service';
 import {UtilService} from '../../services/util.service';
 import { wallet } from 'nanocurrency-web';
 import { TranslocoService } from '@ngneat/transloco';
+import { CloudWalletService } from '../../services/cloud-wallet.service';
 
 enum panels {
   'landing',
@@ -58,6 +59,7 @@ export class ConfigureWalletComponent implements OnInit {
   indexMax = INDEX_MAX;
 
   selectedImportOption = 'seed';
+  walletStorageMode: 'local' | 'cloud' = 'local';
 
   ledgerStatus = LedgerStatus;
   ledger = this.ledgerService.ledger;
@@ -70,7 +72,8 @@ export class ConfigureWalletComponent implements OnInit {
     private qrModalService: QrModalService,
     private ledgerService: LedgerService,
     private util: UtilService,
-    private translocoService: TranslocoService) {
+    private translocoService: TranslocoService,
+    public cloudWalletService: CloudWalletService) {
     if (this.route.getCurrentNavigation().extras.state && this.route.getCurrentNavigation().extras.state.seed) {
       this.activePanel = panels.import;
       this.importSeedModel = this.route.getCurrentNavigation().extras.state.seed;
@@ -84,6 +87,9 @@ export class ConfigureWalletComponent implements OnInit {
   }
 
   async ngOnInit() {
+    const cloudModeRequested = this.router.snapshot.queryParamMap.get('cloud') === '1';
+    this.walletStorageMode = cloudModeRequested ? 'cloud' : 'local';
+
     const exampleSeedBytes = this.util.account.generateSeedBytes();
     const exampleSeedFull = this.util.hex.fromUint8(exampleSeedBytes);
 
@@ -116,6 +122,7 @@ export class ConfigureWalletComponent implements OnInit {
     this.storePassword();
 
     this.notifications.sendSuccess(`Successfully imported wallet!`, {length: 10000});
+    this.syncWalletToCloudIfNeeded();
 
     // this.repService.detectChangeableReps(); // this is now called from change-rep-widget.component when new wallet
     this.walletService.informNewWallet();
@@ -128,6 +135,7 @@ export class ConfigureWalletComponent implements OnInit {
     this.keyString = '';
 
     this.notifications.sendSuccess(`Successfully imported wallet from a private key!`);
+    this.syncWalletToCloudIfNeeded();
     this.walletService.informNewWallet();
   }
 
@@ -180,6 +188,7 @@ export class ConfigureWalletComponent implements OnInit {
     // Create new ledger wallet
     const newWallet = await this.walletService.createLedgerWallet();
     this.notifications.sendSuccess(`Successfully loaded ledger device!`);
+    this.syncWalletToCloudIfNeeded();
 
     this.walletService.informNewWallet();
   }
@@ -207,6 +216,12 @@ export class ConfigureWalletComponent implements OnInit {
   }
 
   async setPasswordInit() {
+    if (this.walletStorageMode === 'cloud' && !this.cloudWalletService.hasSession()) {
+      this.notifications.sendInfo('Please sign in or register first to use cloud wallet mode.');
+      this.route.navigate(['cloud-auth/register'], { queryParams: { next: 'configure-wallet' } });
+      return;
+    }
+
     // if importing from existing, the format check must be done prior the password page
     if (!this.isNewWallet) {
       if (this.selectedImportOption === 'mnemonic' || this.selectedImportOption === 'seed') {
@@ -345,6 +360,7 @@ export class ConfigureWalletComponent implements OnInit {
 
   saveNewWallet() {
     this.walletService.saveWalletExport();
+    this.syncWalletToCloudIfNeeded();
     this.walletService.informNewWallet();
 
     this.notifications.sendSuccess(`New wallet created.`);
@@ -357,6 +373,10 @@ export class ConfigureWalletComponent implements OnInit {
     } else if (panel === panels.import) {
       this.isNewWallet = false;
     }
+  }
+
+  goToCloudLogin() {
+    this.route.navigate(['cloud-auth/login']);
   }
 
   copiedNewWalletSeed() {
@@ -438,6 +458,19 @@ export class ConfigureWalletComponent implements OnInit {
       invalid = true;
     }
     this.validIndex = !invalid;
+  }
+
+  private async syncWalletToCloudIfNeeded() {
+    if (this.walletStorageMode !== 'cloud' || !this.cloudWalletService.hasSession()) {
+      return;
+    }
+
+    try {
+      await this.cloudWalletService.syncCurrentWalletToCloud();
+      this.notifications.sendSuccess('Encrypted wallet backup synced to cloud');
+    } catch {
+      this.notifications.sendWarning('Wallet created locally, but cloud sync failed. You can retry in Settings > Manage Wallet.');
+    }
   }
 
 }

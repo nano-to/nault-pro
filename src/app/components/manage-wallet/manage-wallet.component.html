@@ -96,6 +96,26 @@
       </ng-template>
     </div>
 
+    <div class="uk-card uk-card-default uk-margin" *ngIf="!walletService.isLedgerWallet()">
+      <div class="uk-card-header">
+        <h3 class="uk-card-title">Cloud Wallet Backup</h3>
+      </div>
+      <div class="uk-card-body">
+        <p *ngIf="!cloudWalletService.hasSession()">
+          Sign in with your email account to enable encrypted cloud backups.
+        </p>
+        <p *ngIf="cloudWalletService.hasSession()">
+          Signed in as <b>{{ cloudWalletService.getSessionEmail() }}</b>.<br>
+          Sync will upload your existing encrypted local wallet export to Cloud Wallet.
+        </p>
+      </div>
+      <div class="uk-card-footer uk-text-right@s uk-text-center nlt-button-group">
+        <button *ngIf="!cloudWalletService.hasSession()" (click)="openCloudAuth()" class="uk-button uk-button-primary uk-width-auto@s uk-width-1-1">Sign In to Cloud Wallet</button>
+        <button *ngIf="cloudWalletService.hasSession() && !cloudSyncing" (click)="syncWalletToCloud()" class="uk-button uk-button-primary uk-width-auto@s uk-width-1-1">Import Wallet to Cloud</button>
+        <button *ngIf="cloudWalletService.hasSession() && cloudSyncing" class="uk-button uk-button-secondary uk-disabled uk-width-auto@s uk-width-1-1 nlt-icon-button nlt-icon-button-inline" type="button"><span class="uk-margin-right" uk-spinner="ratio: 0.5;"></span>SYNCING...</button>
+      </div>
+    </div>
+
     <div class="uk-card uk-card-default uk-margin">
       <div class="uk-card-header">
         <h3 class="uk-card-title">Export Transaction History</h3>

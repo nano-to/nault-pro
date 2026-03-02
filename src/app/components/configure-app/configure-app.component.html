@@ -103,6 +103,24 @@
 
           <div class="uk-width-1-1">
             <div class="uk-form-horizontal">
+              <div class="uk-margin">
+                <label class="uk-form-label">Wallet Card Background</label>
+                <div class="uk-form-controls">
+                  <input class="uk-input" type="file" accept="image/*" (change)="onNavCardBackgroundSelected($event)">
+                  <span class="uk-text-meta">Use a custom image for the Balance card in the left navigation (max 500KB).</span>
+                  <div class="card-background-preview" *ngIf="navCardBackground" [style.background-image]="'url(' + navCardBackground + ')'">
+                    <div class="preview-label">Preview</div>
+                  </div>
+                  <div class="uk-margin-small-top" *ngIf="navCardBackground">
+                    <button class="uk-button uk-button-default uk-button-small" (click)="clearNavCardBackground()">Reset Background</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="uk-width-1-1" *ngIf="!cloudWalletService.hasSession()">
+            <div class="uk-form-horizontal">
 
               <div class="uk-margin">
                 <label class="uk-form-label">{{ 'configure-app.component.wallet-storage' | transloco }} <span uk-icon="icon: info;" uk-tooltip [title]="t('configure-app.change-where-your-wallet-is-stored-if-you-select-none-your')"></span></label>

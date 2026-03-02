@@ -15,6 +15,7 @@ import {RepresentativeService} from '../../services/representative.service';
 import {NinjaService} from '../../services/ninja.service';
 import {QrModalService} from '../../services/qr-modal.service';
 import { TranslocoService } from '@ngneat/transloco';
+import { CloudWalletService } from '../../services/cloud-wallet.service';
 
 @Component({
   selector: 'app-configure-app',
@@ -40,7 +41,8 @@ export class ConfigureAppComponent implements OnInit {
     private ninja: NinjaService,
     private renderer: Renderer2,
     private qrModalService: QrModalService,
-    private translocoService: TranslocoService) { }
+    private translocoService: TranslocoService,
+    private cloudWalletService: CloudWalletService) { }
   wallet = this.walletService.wallet;
 
   languages = this.translocoService.getAvailableLangs() as [{id: string, label: string}];
@@ -186,6 +188,7 @@ export class ConfigureAppComponent implements OnInit {
   shouldRandom = null;
 
   customWorkServer = '';
+  navCardBackground: string | null = null;
 
   showServerValues = () => this.selectedServer && this.selectedServer !== 'random' && this.selectedServer !== 'offline';
   showStatValues = () => this.selectedServer && this.selectedServer !== 'offline';
@@ -194,6 +197,18 @@ export class ConfigureAppComponent implements OnInit {
   async ngOnInit() {
     this.loadFromSettings();
     this.updateNodeStats();
+
+    if (this.cloudWalletService.hasSession()) {
+      try {
+        const applied = await this.cloudWalletService.applyCloudServerSettings(true);
+        if (applied) {
+          this.loadFromSettings();
+          this.notifications.sendSuccess('Loaded cloud server settings for this account');
+        }
+      } catch {
+        this.notifications.sendWarning('Unable to load cloud server settings. Using local settings.');
+      }
+    }
 
     setTimeout(() => this.populateRepresentativeList(), 500);
   }
@@ -282,6 +297,7 @@ export class ConfigureAppComponent implements OnInit {
     this.selectedMultiplierOption = matchingMultiplierOption ? matchingMultiplierOption.value : this.multiplierOptions[0].value;
 
     this.customWorkServer = settings.customWorkServer;
+    this.navCardBackground = settings.navCardBackground || null;
 
     const matchingPendingOption = this.pendingOptions.find(d => d.value === settings.pendingOption);
     this.selectedPendingOption = matchingPendingOption ? matchingPendingOption.value : this.pendingOptions[0].value;
@@ -298,6 +314,67 @@ export class ConfigureAppComponent implements OnInit {
     if (this.defaultRepresentative) {
       this.validateRepresentative();
     }
+  }
+
+  async onNavCardBackgroundSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    const file = input?.files?.[0] || null;
+    if (!file) {
+      return;
+    }
+
+    if (!file.type.startsWith('image/')) {
+      this.notifications.sendWarning('Please select a valid image file');
+      input.value = '';
+      return;
+    }
+
+    if (file.size > 500 * 1024) {
+      this.notifications.sendWarning('Image is too large. Please use an image under 500KB.');
+      input.value = '';
+      return;
+    }
+
+    const dataUrl = await new Promise<string>((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onload = () => resolve(String(reader.result || ''));
+      reader.onerror = () => reject(new Error('Unable to read file'));
+      reader.readAsDataURL(file);
+    }).catch(() => '');
+
+    input.value = '';
+    if (!dataUrl) {
+      this.notifications.sendError('Unable to read image file');
+      return;
+    }
+
+    this.navCardBackground = dataUrl;
+    this.appSettings.setAppSetting('navCardBackground', dataUrl);
+
+    if (this.cloudWalletService.hasSession()) {
+      try {
+        await this.cloudWalletService.saveNavCardBackgroundToCloud(dataUrl);
+      } catch {
+        this.notifications.sendWarning('Background updated locally, but cloud sync failed.');
+      }
+    }
+
+    this.notifications.sendSuccess('Wallet card background updated');
+  }
+
+  async clearNavCardBackground() {
+    this.navCardBackground = null;
+    this.appSettings.setAppSetting('navCardBackground', null);
+
+    if (this.cloudWalletService.hasSession()) {
+      try {
+        await this.cloudWalletService.saveNavCardBackgroundToCloud(null);
+      } catch {
+        this.notifications.sendWarning('Background cleared locally, but cloud sync failed.');
+      }
+    }
+
+    this.notifications.sendSuccess('Wallet card background reset');
   }
 
   async updateDisplaySettings() {
@@ -501,6 +578,20 @@ export class ConfigureAppComponent implements OnInit {
     this.serverAPI = this.serverAPIUpdated;
     this.statsRefreshEnabled = true;
     this.updateNodeStats();
+
+    if (this.cloudWalletService.hasSession()) {
+      try {
+        await this.cloudWalletService.saveServerSettingsToCloud({
+          serverName: this.appSettings.settings.serverName,
+          serverAPI: this.appSettings.settings.serverAPI,
+          serverWS: this.appSettings.settings.serverWS,
+          serverAuth: this.appSettings.settings.serverAuth,
+        });
+        this.notifications.sendSuccess('Server settings synced to cloud profile');
+      } catch {
+        this.notifications.sendWarning('Server settings updated locally, but cloud sync failed.');
+      }
+    }
   }
 
   searchRepresentatives() {

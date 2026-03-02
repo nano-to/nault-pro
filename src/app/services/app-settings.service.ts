@@ -28,6 +28,7 @@ interface AppSettings {
   walletVersion: number | null;
   lightModeEnabled: boolean;
   identiconsStyle: string;
+  navCardBackground: string | null;
 }
 
 @Injectable()
@@ -56,6 +57,7 @@ export class AppSettingsService {
     walletVersion: 1,
     lightModeEnabled: false,
     identiconsStyle: 'nanoidenticons',
+    navCardBackground: null,
   };
 
   serverOptions = [
@@ -274,6 +276,7 @@ export class AppSettingsService {
       walletVersion: 1,
       lightModeEnabled: false,
       identiconsStyle: 'nanoidenticons',
+      navCardBackground: null,
     };
   }
 

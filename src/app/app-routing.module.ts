@@ -27,6 +27,8 @@ import { environment } from '../environments/environment';
 import {ManageRepresentativesComponent} from './components/manage-representatives/manage-representatives.component';
 import { MultisigComponent } from './components/multisig/multisig.component';
 import { KeygeneratorComponent } from './components/keygenerator/keygenerator.component';
+import { CloudAuthComponent } from './components/cloud-auth/cloud-auth.component';
+import { CloudApiDocsComponent } from './components/cloud-api-docs/cloud-api-docs.component';
 
 const routes: Routes = [
   { path: '', component: WelcomeComponent },
@@ -55,6 +57,10 @@ const routes: Routes = [
   { path: 'keygenerator', component: KeygeneratorComponent },
   { path: 'converter', component: ConverterComponent },
   { path: 'qr-generator', component: QrGeneratorComponent },
+  { path: 'cloud-auth', component: CloudAuthComponent },
+  { path: 'cloud-auth/login', component: CloudAuthComponent },
+  { path: 'cloud-auth/register', component: CloudAuthComponent },
+  { path: 'cloud-api-docs', component: CloudApiDocsComponent },
 ];
 
 @NgModule({
@@ -66,5 +72,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-
