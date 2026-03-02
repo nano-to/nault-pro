@@ -29,6 +29,9 @@
 
 # misc
 /.angular/cache
+/.wrangler
+/cloud-wallet-worker/.wrangler
+/cloud-wallet-worker/node_modules
 /.sass-cache
 /connect.lock
 /coverage
