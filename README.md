@@ -17,33 +17,26 @@ Nault Pro is a non-custodial Nano wallet experience that can run fully local, or
 
 ## Self-hosting on Cloudflare
 
-The repository includes `cloud-wallet-worker` for running Nault Pro cloud services on Cloudflare Workers + D1.
+The repository includes `functions/` for running Nault Pro cloud services through Cloudflare Pages Functions + D1.
 
-1. Install worker dependencies:
+1. Create and wire a D1 database binding named `DB` in your Pages project.
+2. Apply schema:
 
 ```bash
-cd cloud-wallet-worker
-npm install
+npx wrangler d1 execute nault-pro --file=./functions/schema.sql --remote
 ```
 
-2. Create and wire a D1 database in `cloud-wallet-worker/wrangler.toml`.
-3. Apply schema:
+3. Set required secret:
 
 ```bash
-npm run db:migrate
+npx wrangler pages secret put JWT_SECRET --project-name <your-pages-project>
 ```
 
-4. Set required secret:
+4. (Optional) Set `CORS_ORIGIN` and `RPC_URL` as Pages variables for your environment.
+5. Deploy:
 
 ```bash
-npx wrangler secret put JWT_SECRET
-```
-
-5. (Optional) Set `CORS_ORIGIN` and `RPC_URL` in `wrangler.toml`/Worker vars for your environment.
-6. Deploy:
-
-```bash
-npm run deploy
+# Deploy static site + functions using your Pages workflow
 ```
 
 ## Changes
@@ -65,4 +58,4 @@ npm run deploy
 
 - Email: support@nano.to
 - Twitter: [@nano2dev](https://twitter.com/nano2dev)
-- Mastodon: [Xno.Social](https://xno.social/@nano2dev) 
+- Mastodon: [Xno.Social](https://xno.social/@nano2dev)
