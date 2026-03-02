@@ -15,6 +15,7 @@ import { DesktopService, LedgerService } from './services';
 import { environment } from 'environments/environment';
 import { DeeplinkService } from './services/deeplink.service';
 import { TranslocoService } from '@ngneat/transloco';
+import { CloudWalletService } from './services/cloud-wallet.service';
 
 
 @Component({
@@ -41,7 +42,8 @@ export class AppComponent implements OnInit {
     private ledger: LedgerService,
     private renderer: Renderer2,
     private deeplinkService: DeeplinkService,
-    private translate: TranslocoService) {
+    private translate: TranslocoService,
+    public cloudWalletService: CloudWalletService) {
       router.events.subscribe(() => {
         this.closeNav();
       });
@@ -82,6 +84,14 @@ export class AppComponent implements OnInit {
   async ngOnInit() {
     this.onWindowResize(window);
     this.settings.loadAppSettings();
+
+    if (this.cloudWalletService.hasSession()) {
+      try {
+        await this.cloudWalletService.applyCloudServerSettings(false);
+      } catch {
+        // Ignore profile sync failures on startup.
+      }
+    }
 
     this.updateAppTheme();
 

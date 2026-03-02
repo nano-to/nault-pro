@@ -49,12 +49,35 @@ export class NinjaService {
   }
 
   async recommended(): Promise<any> {
-    return await this.http.get('https://nano.to/reps.json').toPromise();
+    try {
+      const rpcResponse: any = await this.http.post('https://rpc.nano.to', { action: 'reps' }).toPromise();
+      const reps = Array.isArray(rpcResponse)
+        ? rpcResponse
+        : (Array.isArray(rpcResponse?.reps) ? rpcResponse.reps : []);
+
+      return reps
+        .filter(rep => !!rep)
+        .map(rep => {
+          const account = rep.rep_address || rep.account || '';
+          const alias = rep.alias || rep.name || '';
+          return {
+            ...rep,
+            account,
+            rep_address: account,
+            alias,
+            weight: rep.weight || '0',
+          };
+        })
+        .filter(rep => rep.account && rep.alias);
+    } catch (rpcErr) {
+      const fallback = await this.http.get('https://nano.to/reps.json').toPromise() as any[];
+      return Array.isArray(fallback) ? fallback : [];
+    }
   }
 
   async recommendedRandomized(): Promise<any> {
     const replist = await this.recommended();
-    return this.randomizeByScore(replist);
+    return this.randomizeByScore(Array.isArray(replist) ? replist : []);
   }
 
   async getSuggestedRep(): Promise<any> {
