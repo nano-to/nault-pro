@@ -59,61 +59,86 @@ export class AppSettingsService {
   };
 
   serverOptions = [
-    
     {
       name: 'Nano.to - Automatic',
       value: 'rpc.nano.to',
       api: 'https://rpc.nano.to',
       ws: null,
-      auth: '',
-      shouldRandom: true,
+      auth: null,
+      shouldRandom: false,
     },
-
     {
       name: 'US-1.Nano.To',
       value: 'us-2.nano.to',
       api: 'https://us-2.nano.to',
       ws: null,
-      auth: '',
+      auth: null,
       shouldRandom: true,
     },
-
     {
       name: 'US-2.Nano.To',
       value: 'us-2.nano.to',
       api: 'https://us-2.nano.to',
       ws: null,
-      auth: '',
+      auth: null,
       shouldRandom: true,
     },
-
     {
       name: 'Europe-1.Nano.To',
       value: 'uk-2.nano.to',
       api: 'https://us-2.nano.to',
       ws: null,
-      auth: '',
+      auth: null,
       shouldRandom: true,
     },
-
     {
       name: 'Africa-1.Nano.To',
       value: 'humblenano-2.nano.to',
       api: 'https://humblenano-2.nano.to',
       ws: null,
-      auth: '',
+      auth: null,
       shouldRandom: true,
     },
-
-    // {
-    //   name: 'Random',
-    //   value: 'random',
-    //   api: null,
-    //   ws: null,
-    //   auth: null,
-    //   shouldRandom: false,
-    // },
-
+    {
+      name: 'XNOPay UK 1',
+      value: 'xnopay-uk-1',
+      api: 'https://uk1.public.xnopay.com/proxy',
+      ws: 'wss://uk1.public.xnopay.com/ws',
+      auth: null,
+      shouldRandom: true,
+    },
+    {
+      name: 'Rainstorm City',
+      value: 'rainstorm',
+      api: 'https://rainstorm.city/api',
+      ws: 'wss://rainstorm.city/websocket',
+      auth: null,
+      shouldRandom: true,
+    },
+    {
+      name: 'NanOslo',
+      value: 'nanoslo',
+      api: 'https://nanoslo.0x.no/proxy',
+      ws: 'wss://nanoslo.0x.no/websocket',
+      auth: null,
+      shouldRandom: true,
+    },
+    {
+      name: 'SomeNano',
+      value: 'somenano',
+      api: 'https://node.somenano.com/proxy',
+      ws: 'wss://node.somenano.com/websocket',
+      auth: null,
+      shouldRandom: true,
+    },
+    {
+      name: 'SpyNano (New Node - Use with caution)',
+      value: 'spynano',
+      api: 'https://node.spynano.org/proxy',
+      ws: 'wss://node.spynano.org/websocket',
+      auth: null,
+      shouldRandom: false,
+    },
     {
       name: 'Custom Server',
       value: 'custom',

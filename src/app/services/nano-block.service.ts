@@ -8,6 +8,7 @@ import {AppSettingsService} from './app-settings.service';
 import {LedgerService} from './ledger.service';
 import { WalletAccount } from './wallet.service';
 import {BehaviorSubject} from 'rxjs';
+import { tools as nanocurrencyWebTools } from 'nanocurrency-web';
 const nacl = window['nacl'];
 
 @Injectable()
@@ -16,13 +17,20 @@ export class NanoBlockService {
     'nano_1x7biz69cem95oo7gxkrw6kzhfywq4x5dupw4z1bdzkb74dk9kpxwzjbdhhs', // NanoCrawler
     'nano_1zuksmn4e8tjw1ch8m8fbrwy5459bx8645o9euj699rs13qy6ysjhrewioey', // Nanowallets.guide
     'nano_3chartsi6ja8ay1qq9xg3xegqnbg1qx76nouw6jedyb8wx3r4wu94rxap7hg', // Nano Charts
-    'nano_1ninja7rh37ehfp9utkor5ixmxyg8kme8fnzc4zty145ibch8kf5jwpnzr3r', // My Nano Ninja
-    'nano_1iuz18n4g4wfp9gf7p1s8qkygxw7wx9qfjq6a9aq68uyrdnningdcjontgar', // NanoTicker / Json
-    'nano_3power3gwb43rs7u9ky3rsjp6fojftejceexfkf845sfczyue4q3r1hfpr3o', // PowerNode
-    'nano_1ookerz3adg5rxc4zwwoshim5yyyihf6dpogjihwwq6ksjpq7ea4fuam5mmc', // Nanolooker.com
+    'nano_1iuz18n4g4wfp9gf7p1s8qkygxw7wx9qfjq6a9aq68uyrdnningdcjontgar', // NanoTicker / Ricki
+    'nano_3msc38fyn67pgio16dj586pdrceahtn75qgnx7fy19wscixrc8dbb3abhbw6', // gr0vity
+    'nano_3patrick68y5btibaujyu7zokw7ctu4onikarddphra6qt688xzrszcg4yuo', // Patrick
+    'nano_1tk8h3yzkibbsti8upkfa69wqafz6mzfzgu8bu5edaay9k7hidqdunpr4tb6', // rsnano
+    'nano_3ekb6tp8ixtkibimyygepgkwckzhds9basxd5zfue4efjnxaan77gsnanick', // Nanick
+    'nano_1xckpezrhg56nuokqh6t1stjca67h37jmrp9qnejjkfgimx1msm9ehuaieuq', // Flying Amigos
+    'nano_3n7ky76t4g57o9skjawm8pprooz1bminkbeegsyt694xn6d31c6s744fjzzz', // Humble Nano
+    'nano_1wenanoqm7xbypou7x3nue1isaeddamjdnc3z99tekjbfezdbq8fmb659o7t', // WeNano
   ];
 
   zeroHash = '0000000000000000000000000000000000000000000000000000000000000000';
+
+  // https://docs.nano.org/releases/network-upgrades/#epoch-blocks
+  epochV2SignerAccount = 'nano_3qb6o6i1tkzr6jwr5s7eehfxwg9x6eemitdinbpi7u8bjjwsgqfj4wzser3x';
 
   newOpenBlock$: BehaviorSubject<boolean|false> = new BehaviorSubject(false);
 
@@ -37,6 +45,10 @@ export class NanoBlockService {
   async generateChange(walletAccount, representativeAccount, ledger = false) {
     const toAcct = await this.api.accountInfo(walletAccount.id);
     if (!toAcct) throw new Error(`Account must have an open block first`);
+
+    const walletAccountPublicKey = this.util.account.getAccountPublicKey(walletAccount.id);
+
+    await this.validateAccount(toAcct, walletAccountPublicKey);
 
     const balance = new BigNumber(toAcct.balance);
     const balanceDecimal = balance.toString(10);
@@ -70,7 +82,6 @@ export class NanoBlockService {
         return;
       }
     } else {
-      this.validateAccount(toAcct);
       this.signStateBlock(walletAccount, blockData);
     }
 
@@ -184,6 +195,10 @@ export class NanoBlockService {
     const fromAccount = await this.api.accountInfo(walletAccount.id);
     if (!fromAccount) throw new Error(`Unable to get account information for ${walletAccount.id}`);
 
+    const walletAccountPublicKey = this.util.account.getAccountPublicKey(walletAccount.id);
+
+    await this.validateAccount(fromAccount, walletAccountPublicKey);
+
     const remaining = new BigNumber(fromAccount.balance).minus(rawAmount);
     const remainingDecimal = remaining.toString(10);
 
@@ -218,7 +233,6 @@ export class NanoBlockService {
         return;
       }
     } else {
-      this.validateAccount(fromAccount);
       this.signStateBlock(walletAccount, blockData);
     }
 
@@ -241,6 +255,10 @@ export class NanoBlockService {
 
   async generateReceive(walletAccount, sourceBlock, ledger = false) {
     const toAcct = await this.api.accountInfo(walletAccount.id);
+    const walletAccountPublicKey = this.util.account.getAccountPublicKey(walletAccount.id);
+
+    await this.validateAccount(toAcct, walletAccountPublicKey);
+
     let workBlock = null;
 
     const openEquiv = !toAcct || !toAcct.frontier;
@@ -290,11 +308,10 @@ export class NanoBlockService {
         return;
       }
     } else {
-      this.validateAccount(toAcct);
       this.signStateBlock(walletAccount, blockData);
     }
 
-    workBlock = openEquiv ? this.util.account.getAccountPublicKey(walletAccount.id) : previousBlock;
+    workBlock = openEquiv ? walletAccountPublicKey : previousBlock;
     if (!this.workPool.workExists(workBlock)) {
       this.notifications.sendInfo(`Generating Proof of Work...`, { identifier: 'pow', length: 0 });
     }
@@ -387,29 +404,70 @@ export class NanoBlockService {
     return block; // return signed block (with or without work)
   }
 
-  async validateAccount(accountInfo) {
-    if (!accountInfo) return;
-    if (!accountInfo.frontier || accountInfo.frontier === this.zeroHash) {
-      if (accountInfo.balance && accountInfo.balance !== '0') {
+  async validateAccount(accountInfoUntrusted, accountPublicKey) {
+    if (!accountInfoUntrusted) return;
+
+    if (!accountInfoUntrusted.frontier || accountInfoUntrusted.frontier === this.zeroHash) {
+      if (accountInfoUntrusted.balance && accountInfoUntrusted.balance !== '0') {
         throw new Error(`Frontier not set, but existing account balance is nonzero`);
       }
-      if (accountInfo.representative) {
+
+      if (accountInfoUntrusted.representative) {
         throw new Error(`Frontier not set, but existing account representative is set`);
       }
+
       return;
     }
-    const blockResponse = await this.api.blocksInfo([accountInfo.frontier]);
-    const blockData = blockResponse.blocks[accountInfo.frontier];
-    if (!blockData) throw new Error(`Unable to load block data`);
-    blockData.contents = JSON.parse(blockData.contents);
-    if (accountInfo.balance !== blockData.contents.balance || accountInfo.representative !== blockData.contents.representative) {
+
+    const frontierBlockResponseUntrusted =
+      await this.api.blocksInfo([ accountInfoUntrusted.frontier ]);
+
+    const frontierBlockDataUntrusted =
+      frontierBlockResponseUntrusted.blocks[accountInfoUntrusted.frontier];
+
+    if (!frontierBlockDataUntrusted) throw new Error(`Unable to load frontier block data`);
+
+    frontierBlockDataUntrusted.contents = JSON.parse(frontierBlockDataUntrusted.contents);
+
+    const isFrontierBlockMatchingAccountInfo = (
+        (frontierBlockDataUntrusted.contents.balance === accountInfoUntrusted.balance)
+      && (frontierBlockDataUntrusted.contents.representative === accountInfoUntrusted.representative)
+    );
+
+    if (isFrontierBlockMatchingAccountInfo !== true) {
       throw new Error(`Frontier block data doesn't match account info`);
     }
-    if (blockData.contents.type !== 'state') {
+
+    if (frontierBlockDataUntrusted.contents.type !== 'state') {
       throw new Error(`Frontier block wasn't a state block, which shouldn't be possible`);
     }
-    if (this.util.hex.fromUint8(this.util.nano.hashStateBlock(blockData.contents)) !== accountInfo.frontier) {
+
+    const isComputedBlockHashMatchingAccountFrontierHash = (
+        this.util.hex.fromUint8( this.util.nano.hashStateBlock(frontierBlockDataUntrusted.contents) )
+      === accountInfoUntrusted.frontier
+    );
+
+    if (isComputedBlockHashMatchingAccountFrontierHash !== true) {
       throw new Error(`Frontier hash didn't match block data`);
+    }
+
+    if (frontierBlockDataUntrusted.subtype === 'epoch') {
+      const isEpochV2BlockSignatureValid =
+        nanocurrencyWebTools.verifyBlock(
+          this.util.account.getAccountPublicKey(this.epochV2SignerAccount),
+          frontierBlockDataUntrusted.contents
+        );
+
+      if (isEpochV2BlockSignatureValid !== true) {
+        throw new Error(`Node provided an untrusted frontier block that is an unsupported epoch`);
+      }
+    } else {
+      const isFrontierBlockSignatureValid =
+        nanocurrencyWebTools.verifyBlock(accountPublicKey, frontierBlockDataUntrusted.contents);
+
+      if (isFrontierBlockSignatureValid !== true) {
+        throw new Error(`Node provided an untrusted frontier block that was signed by someone else`);
+      }
     }
   }
 
