@@ -4,7 +4,15 @@
 - Web bootstrap starts at `src/main.ts`; app wiring is in `src/app/app.module.ts`.
 - Electron bootstrap is `desktop-app/src/desktop-app.ts`.
 - Use `npm` here; the repo is locked with `package-lock.json`.
-- GitHub compare against `nault/nault` master currently shows this fork 180 commits ahead.
+
+## Upstream Delta
+
+- This fork is 180 commits ahead of `nault/nault` master.
+- The main additions are Nano.to integration, especially username lookup/search, transaction-table support, RPC changes, and related copy/alias updates.
+- UI work is mostly redesign and polish: dark/light styling, sidebar and onboarding tweaks, notifications, and broad CSS cleanup.
+- Product expansion includes marketplace/ecommerce work, SimpleSwap, funding/social pages, and business-wallet changes.
+- AI work adds ChatGPT/proGPT integration, model switching, plugin toggles, cost/alert handling, and Nano.to AI address flow changes.
+- Release and ops work covers Cloudflare Pages/docs updates, build/release packaging, Node 18 pinning, and merge/fix churn.
 
 ## Commands
 
