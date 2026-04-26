@@ -14,6 +14,8 @@
 
 ## Changes
 
+This fork is currently 180 commits ahead of `nault/nault`.
+
 - ✅ Redesigned UI/UX
 - ✅ Add Nano.to Usernames to send page.
 - ✅ Add Nano.to Usernames to transactions.
